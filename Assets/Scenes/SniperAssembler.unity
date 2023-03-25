@@ -430,10 +430,11 @@ GameObject:
   - component: {fileID: 766249146}
   - component: {fileID: 766249145}
   - component: {fileID: 766249144}
-  - component: {fileID: 766249148}
   - component: {fileID: 766249151}
   - component: {fileID: 766249149}
   - component: {fileID: 766249150}
+  - component: {fileID: 766249152}
+  - component: {fileID: 766249153}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -512,70 +513,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766249143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: 3.99}
+  m_LocalRotation: {x: 0, y: 0.9999817, z: -0, w: -0.006047503}
+  m_LocalPosition: {x: -0.03, y: -0.78, z: 1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &766249148
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766249143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90ba6530d9bfda47abb4610956b2f44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCamera: {fileID: 330585545}
-  fov: 60
-  invertCamera: 0
-  cameraCanMove: 1
-  mouseSensitivity: 2
-  maxLookAngle: 50
-  lockCursor: 1
-  crosshair: 1
-  crosshairImage: {fileID: 0}
-  crosshairColor: {r: 1, g: 1, b: 1, a: 1}
-  enableZoom: 1
-  holdToZoom: 0
-  zoomKey: 324
-  zoomFOV: 30
-  zoomStepTime: 5
-  playerCanMove: 1
-  walkSpeed: 5
-  maxVelocityChange: 10
-  enableSprint: 1
-  unlimitedSprint: 0
-  sprintKey: 304
-  sprintSpeed: 7
-  sprintDuration: 5
-  sprintCooldown: 0.5
-  sprintFOV: 80
-  sprintFOVStepTime: 10
-  useSprintBar: 1
-  hideBarWhenFull: 1
-  sprintBarBG: {fileID: 0}
-  sprintBar: {fileID: 0}
-  sprintBarWidthPercent: 0.3
-  sprintBarHeightPercent: 0.015
-  enableJump: 1
-  jumpKey: 32
-  jumpPower: 5
-  enableCrouch: 1
-  holdToCrouch: 1
-  crouchKey: 306
-  crouchHeight: 0.75
-  speedReduction: 0.5
-  enableHeadBob: 1
-  joint: {fileID: 330585546}
-  bobSpeed: 10
-  bobAmount: {x: 0.15, y: 0.05, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.693, z: 0}
 --- !u!54 &766249149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -703,6 +648,52 @@ MonoBehaviour:
   shootingSFX: {fileID: 8300000, guid: 3c65a3e4ca8c5a446ace61a9db58b179, type: 3}
   cointossSFX: {fileID: 8300000, guid: 283079e26a671c94982d00148284d165, type: 3}
   fireRate: 0.15
+--- !u!114 &766249152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766249143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40ed50c8bddd40141b0114bf48a1efed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 330585546}
+  cameraYOffset: 0.7
+  xMouseSensitivity: 30
+  yMouseSensitivity: 30
+  spawnPointPosition: {fileID: 0}
+  moveSpeed: 7
+  runAccel: 14
+  runDeAccel: 10
+  airDeccel: 2
+  sideSpeed: 1
+  sideAccel: 50
+  gravity: 20
+  jumpSpeed: 8
+  friction: 6
+  audioSource: {fileID: 0}
+  jumpSfx: {fileID: 0}
+--- !u!143 &766249153
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766249143}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.49999994
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -805,7 +796,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: dfc08c90188302847afb04f628582097, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
